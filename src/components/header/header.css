@@ -1,0 +1,40 @@
+.header-container {
+    background: #111111;
+    padding: 10px;
+}
+
+.header-title {
+    color: #bababa;
+}
+
+.header-button {
+    background: #1e2429;
+    margin: 0px 6px;
+    border-radius: 5px;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+}
+
+.header-button:hover {
+    background: #00b0c9;
+    cursor: pointer;
+}
+
+.header-button:hover .header-button-text {
+    color: white;
+}
+
+.header-button:hover .header-button-icon {
+    color: white;
+}
+ 
+.header-button-icon {
+    height: 15px;
+    width: 15px;
+    color: #5a6268;
+}
+
+.header-button-text {
+    color: #5a6268;
+    margin-left: 8px !important;
+}

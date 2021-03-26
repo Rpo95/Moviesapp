@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/header';
+import Movie from './components/movie/movie';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MovieApi from './networking/movie.api';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    getPopularMovies()
+  }, [])
+
+  const getPopularMovies=()=>{
+      let movieApi=new MovieApi()
+      movieApi.getPopularMovies()
+        .then(res => {
+          setMovies(res.data.results)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container h-100">
+        <Header/>
+        <div className="row movies-container">
+          {movies.map(movie=>{
+            console.log(movie)
+            return (
+              <Movie image={movie.backdrop_path} key={movie.id} title={movie.title} releaseDate={movie.release_date} voteAverage={movie.vote_average}/>
+            )
+          })}
+        </div>
     </div>
   );
 }

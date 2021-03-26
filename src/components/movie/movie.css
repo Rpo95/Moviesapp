@@ -1,0 +1,30 @@
+.movie-poster {
+    border-radius: 10px;
+    width: 221px;
+
+}
+
+.movie-title {
+    color: white;
+    margin-top: 5px  !important;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 200px;
+    white-space: nowrap;
+}
+
+.movie-info {
+    color: #bababa;
+    
+}
+
+.movie-type {
+    color: #bababa;
+    border-color: #bababa;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 1px;
+    text-align: center;
+}
