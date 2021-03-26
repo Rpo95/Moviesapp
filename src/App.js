@@ -14,14 +14,14 @@ function App() {
   }, [])
 
   const getPopularMovies=()=>{
-      let movieApi=new MovieApi()
+      let movieApi=new MovieApi();
       movieApi.getPopularMovies()
         .then(res => {
           setMovies(res.data.results)
         })
         .catch(error => {
           console.log(error)
-        })
+        });
   }
 
   return (
